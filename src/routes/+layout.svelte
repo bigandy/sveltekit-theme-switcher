@@ -1,9 +1,9 @@
-<script lang="ts">
-	import { enhance, type SubmitFunction } from '$app/forms';
+<script>
+	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 	import '../app.postcss';
 
-	const submitUpdateTheme: SubmitFunction = ({ action }) => {
+	const submitUpdateTheme = ({ action }) => {
 		const theme = action.searchParams.get('theme');
 
 		if (theme) {
@@ -11,37 +11,7 @@
 		}
 	};
 
-	const themes = [
-		'light',
-		'dark',
-		'cupcake',
-		'bumblebee',
-		'emerald',
-		'corporate',
-		'synthwave',
-		'retro',
-		'cyberpunk',
-		'valentine',
-		'halloween',
-		'garden',
-		'forest',
-		'aqua',
-		'lofi',
-		'pastel',
-		'fantasy',
-		'wireframe',
-		'black',
-		'luxury',
-		'dracula',
-		'cmyk',
-		'autumn',
-		'business',
-		'acid',
-		'lemonade',
-		'night',
-		'coffee',
-		'winter'
-	];
+	import { themes } from './themes';
 </script>
 
 <div class="bg-base-300 min-h-full">
