@@ -1,9 +1,13 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
-	import '../app.postcss';
 
-	const submitUpdateTheme = ({ action }) => {
+	import type { SubmitFunction } from './$types';
+
+	import '../app.postcss';
+	import { themes } from './themes';
+
+	const submitUpdateTheme: SubmitFunction = ({ action }) => {
 		const theme = action.searchParams.get('theme');
 
 		if (theme) {
@@ -11,7 +15,6 @@
 		}
 	};
 
-	import { themes } from './themes';
 </script>
 
 <div class="bg-base-300 min-h-full">
